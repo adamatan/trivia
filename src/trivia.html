@@ -1,0 +1,46 @@
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .trivia-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .trivia-tile {
+                width: 30%;
+                padding-bottom: 30%;
+                margin: 1%;
+                background-color: #f0f0f0;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+            @media (max-width: 600px) {
+                .trivia-tile {
+                    width: 30%;
+                    padding-bottom: 30%;
+                }
+            }
+            @media (min-width: 601px) and (max-width: 1024px) {
+                .trivia-tile {
+                    width: 22%;
+                    padding-bottom: 22%;
+                }
+            }
+            @media (min-width: 1025px) {
+                .trivia-tile {
+                    width: 18%;
+                    padding-bottom: 18%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="trivia-container">
+    <div class="trivia-tile">Topic 1</div><div class="trivia-tile">Topic 2</div><div class="trivia-tile">Topic 3</div>
+        </div>
+    </body>
+    </html>
+    

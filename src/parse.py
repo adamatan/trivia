@@ -256,9 +256,17 @@ def generate_index_html(titles):
             color: #007bff;
             cursor: pointer;
             transition: color 0.3s;
+            border: 2px solid #007bff;
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: inline-block;
+            background-color: #fff; /* Default white background */
         }
         .topic:hover {
             color: #0056b3;
+        }
+        .topic.visited {
+            background-color: #e6e6fa; /* Very light purple background for visited */
         }
     </style>
 </head>
@@ -274,6 +282,20 @@ def generate_index_html(titles):
 
     html_content += """
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const topics = document.querySelectorAll('.topic');
+            topics.forEach(topic => {
+                const title = topic.innerText;
+                if (localStorage.getItem(title)) {
+                    topic.classList.add('visited');
+                }
+                topic.addEventListener('click', function() {
+                    localStorage.setItem(title, 'visited');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 """
